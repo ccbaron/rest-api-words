@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REST API Words</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+<body>
+  <main class="container">
+    <h1>REST API Words</h1>
+    <p>Esta API te permite obtener palabras aleatorias.</p>
+    <h2>Endpoints</h2>
+    <ul>
+      <li>
+        <strong><a href="/api/v1/word" target="_blank">GET /api/v1/word</a></strong><br>
+        Devuelve una palabra aleatoria.
+      </li>
+      <li>
+        <strong><a href="/api/v1/word?length=3" target="_blank">GET /api/v1/word?length=3</a></strong><br>
+        Devuelve una palabra aleatoria de <code>3</code> letras (entre 3 y 13).
+      </li>
+    </ul>
+    <h3>Ejemplo de respuesta</h3>
+    <pre>{
+  "message": "Word fetched successfully",
+  "result": "gato"
+}</pre>
+  </main>
+</body>
+</html>
