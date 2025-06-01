@@ -21,11 +21,11 @@ Las siguientes cuatro restricciones permiten lograr una interfaz REST uniforme:
 
 Ademas vamos a [versionar](https://restfulapi.net/versioning/) nuestra API como buena práctica de programación.
 
-## Iteración 1: Implementar el endpoint /api/v1/word
+## Iteración 1: Implementar el endpoint /api/v1/words
 
 **Objetivo:** Devolver una palabra aleatoria de la base de datos JSON.
 
-- El endpoint debe estar en la ruta `/api/v1/word` y responder a peticiones GET.
+- El endpoint debe estar en la ruta `/api/v1/words` y responder a peticiones GET.
 - Debe leer el fichero `words.json` y devolver una palabra aleatoria de la lista.
 - Usa `res.json()` para enviar la respuesta.
 
@@ -40,7 +40,7 @@ Ademas vamos a [versionar](https://restfulapi.net/versioning/) nuestra API como 
 
 **Pista:** Utiliza el array de palabras cargado desde `words.json` para seleccionar una palabra aleatoria.
 
-Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v1/word desde tu navegador o usando una herramienta como Thunderclient o curl.
+Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v1/words desde tu navegador o usando una herramienta como Thunderclient o curl.
 
 ### Enlaces interesantesç
 

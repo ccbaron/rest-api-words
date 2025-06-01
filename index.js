@@ -14,14 +14,23 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Endpoints
-app.get("/api/v1/word", (req, res) => {
+app.get("/api/v1/words", (req, res) => {
   const { length } = req.query;
 
   let filteredWords = words;
 
   if (length && (Number(length) < 3 || Number(length) > 13)) {
+    return res.status(400).json({ error: "El parámetro length debe estar entre 3 y 13" });
+  }
+
+  if (length) {
     filteredWords = words.filter(word => word.length === Number(length));
   }
+
+  if (!filteredWords.length) {
+    return res.status(404).json({ error: "No hay palabras con esa longitud" });
+  }
+
   const randomWord = filteredWords[Math.floor(Math.random() * filteredWords.length)];
 
   res.json({ word: randomWord });
