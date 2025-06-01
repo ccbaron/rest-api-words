@@ -18,13 +18,14 @@ app.get("/api/v1/words", (req, res) => {
   const { length } = req.query;
 
   let filteredWords = words;
+  const wordLength = wordLength;
 
-  if (length && (Number(length) < 3 || Number(length) > 13)) {
+  if (length && (wordLength < 3 || wordLength > 13)) {
     return res.status(400).json({ error: "El parámetro length debe estar entre 3 y 13" });
   }
 
   if (length) {
-    filteredWords = words.filter(word => word.length === Number(length));
+    filteredWords = words.filter(word => word.length === wordLength);
   }
 
   if (!filteredWords.length) {
@@ -34,6 +35,38 @@ app.get("/api/v1/words", (req, res) => {
   const randomWord = filteredWords[Math.floor(Math.random() * filteredWords.length)];
 
   res.json({ word: randomWord });
+});
+
+// Idiomas disponibles para la API v2
+const availableLanguages = ["zh", "pt-br", "es", "de", "it", "fr"];
+
+// Endpoint para obtener los idiomas disponibles
+app.get("/api/v2/languages", (req, res) => {
+  res.json({ languages: availableLanguages });
+});
+
+// Endpoint para obtener una palabra aleatoria desde la API externa, permitiendo idioma y longitud
+app.get("/api/v2/word", async (req, res) => {
+  const { length, lang } = req.query;
+  const wordLength = Number(length) || 5;
+  const language = lang || "es";
+
+  if (!availableLanguages.includes(language)) {
+    return res.status(400).json({ error: "Idioma no soportado" });
+  }
+
+  try {
+    const apiUrl = `https://random-word-api.herokuapp.com/word?length=${wordLength}&lang=${language}`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    if (Array.isArray(data) && data.length > 0) {
+      res.json({ word: data[0] });
+    } else {
+      res.status(404).json({ error: "No se encontró palabra" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener la palabra externa" });
+  }
 });
 
 // 404 para rutas no existentes
