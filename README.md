@@ -45,3 +45,56 @@ Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podr
 ### Enlaces interesantesç
 
 [Buenas prácticas en la creación de REST APIs](https://restfulapi.net/rest-api-best-practices/)
+
+## Iteración 2: Filtrar por longitud con el parámetro length
+
+**Objetivo:** Permitir que el endpoint devuelva solo palabras de una longitud específica usando el parámetro de consulta `length`.
+
+- El endpoint debe seguir siendo `/api/v1/words` y responder a peticiones GET.
+- Si se especifica el parámetro `length`, solo debe devolver palabras que tengan exactamente ese número de letras.
+- Si no hay palabras con esa longitud, debe devolver un error adecuado.
+- Usa `res.json()` para enviar la respuesta.
+
+**Ejemplo de petición:**
+
+```
+GET /api/v1/words?length=5
+```
+
+**Ejemplo de respuesta esperada:**
+
+```
+{
+  "word": "perro"
+}
+```
+
+**Ejemplo de error si no hay palabras:**
+
+```
+{
+  "error": "No hay palabras con esa longitud"
+}
+```
+
+**Pista:** Utiliza el método `filter` de los arrays para seleccionar solo las palabras que tengan la longitud indicada.
+
+## Iteración 1b: Despliega tu API en render.com
+
+**Objetivo:** Subir y desplegar tu código en la nube usando render.com para que tu API sea accesible desde cualquier lugar.
+
+**Pasos sugeridos:**
+
+1. Sube tu proyecto a un repositorio en GitHub (puedes crear uno nuevo y subir todos los archivos del proyecto).
+2. Accede a <a href="https://render.com/" target="_blank">render.com</a> y crea una cuenta si no tienes una.
+3. Crea un nuevo servicio de tipo "Web Service" y conecta tu cuenta de GitHub.
+4. Selecciona el repositorio de tu proyecto y sigue los pasos para desplegarlo:
+   - Elige Node.js como entorno.
+   - Asegúrate de que el comando de inicio sea `node index.js` o el que corresponda a tu proyecto.
+   - El puerto debe ser el que Render asigne automáticamente (usa `process.env.PORT`).
+5. Espera a que Render termine de construir y desplegar tu API.
+6. Prueba tu API accediendo a la URL pública que Render te proporciona, por ejemplo: `https://tu-api.onrender.com/api/v1/words`.
+
+**Consejo:** Puedes usar herramientas como Thunderclient, Postman o simplemente tu navegador para probar los endpoints en la URL pública.
+
+Cuando lo hayas conseguido, ¡comparte la URL con tus compañeros o profesor para que puedan probar tu API!
