@@ -66,6 +66,26 @@ Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podr
 - Si no hay palabras con esa longitud, debe devolver un error adecuado.
 - Usa `res.json()` para enviar la respuesta.
 
+## Iteración Intermaedia: Despliega tu API en render.com
+
+**Objetivo:** Subir y desplegar tu código en la nube usando render.com para que tu API sea accesible desde cualquier lugar.
+
+**Pasos sugeridos:**
+
+1. Sube tu proyecto a un repositorio en GitHub si no lo tienes ya(puedes crear uno nuevo y subir todos los archivos del proyecto).
+2. Accede a <a href="https://render.com/" target="_blank">render.com</a> y crea una cuenta si no tienes una.
+3. Crea un nuevo servicio de tipo "Web Service" y conecta tu cuenta de GitHub.
+4. Selecciona el repositorio de tu proyecto y sigue los pasos para desplegarlo:
+   - Elige Node.js como entorno.
+   - Asegúrate de que el comando de inicio sea `node index.js` o `npm start`.
+   - El puerto debe ser el que Render asigne automáticamente (usa `process.env.PORT`).
+5. Espera a que Render termine de construir y desplegar tu API.
+6. Prueba tu API accediendo a la URL pública que Render te proporciona, por ejemplo: `https://tu-api.onrender.com/api/v1/words`.
+
+**Consejo:** Puedes usar herramientas como Thunderclient, Postman o simplemente tu navegador para probar los endpoints en la URL pública.
+
+Cuando lo hayas conseguido, ¡comparte la URL con tus compañeros o profesor para que puedan probar tu API!
+
 **Ejemplo de petición:**
 
 ```
