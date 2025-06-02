@@ -16,7 +16,9 @@ Disponemos de una base de datos JSON con palabras de 3 a 13 letras.
 
 ## Documentación de la API
 
-Informamos a los clientes de como usar nuestra API mediante el fichero **public/index.html** al cuál podemos acceder mediante http://localhost:3000/ una vez leventemos el servidor.
+Informamos a los clientes de como usar nuestra API mediante el fichero **public/index.html** al cuál podemos acceder mediante http://localhost:3000/ una vez leventemos el servidor. Porque es realmente importante informar a nuestros clientes cómo pueden usar nuestra API
+
+<img src="https://project-static-assets.s3.amazonaws.com/APISpreadsheets/APIMemes/DragonForChristmas.jpeg" alt="drawing" width="400"/>
 
 ## Principios generales de las REST API
 
