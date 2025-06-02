@@ -167,6 +167,14 @@ Modifica el fichero **public/index.html** para añadir la documentación de cóm
 
 Cada vez que obtenemos una palabra nueva de la API externa, si no la tenemos en nuestro fichero data/words.json, la añadimos al fichero. ¿Usarás escritura síncrona o asíncrona?
 
+### Bonus 2
+
+Implementa un endpoint /api/v1/words/all que permite obtener TODO el array de palabras del fichero words.json
+
+### Bonus 3
+
+Implemena un endpoint /api/v1/words/:index que permite obtener la palabra que ocupa la posición _:indeX_ del array de palabras
+
 ### Enlaces interesantes
 
 [Buenas prácticas en la creación de REST APIs](https://restfulapi.net/rest-api-best-practices/)
