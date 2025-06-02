@@ -18,7 +18,7 @@ app.get("/api/v1/words", (req, res) => {
   const { length } = req.query;
 
   let filteredWords = words;
-  const wordLength = wordLength;
+  const wordLength = Number(length);
 
   if (length && (wordLength < 3 || wordLength > 13)) {
     return res.status(400).json({ error: "El parámetro length debe estar entre 3 y 13" });

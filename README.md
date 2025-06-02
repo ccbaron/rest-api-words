@@ -173,6 +173,10 @@ GET /api/v2/word?length=5&lang=it
 
 Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v2/word?length=5&lang=it desde tu navegador o usando una herramienta como Thunderclient o curl.
 
+### Bonus 
+
+Modifica el fichero **public/index.html** para añadir la documentación de cómo usar la versión 2 de la API
+
 ### Bonus (de dudosa utilidad, solo por practicar :D )
 
 Cada vez que obtenemos una palabra nueva de la API externa, si no la tenemos en nuestro fichero data/words.json, la añadimos al fichero. ¿Usarás escritura síncrona o asíncrona?
