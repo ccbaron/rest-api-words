@@ -153,7 +153,15 @@ GET /api/v2/word?length=5&lang=it
 }
 ```
 
-**Ejemplo de error:**
+**Si el cliente proporciona un idioma inválido**
+
+{
+  "error": "Idioma no soportado. Consulta los idiomas válidos en /api/v2/languages"
+}
+
+
+
+**Si la API externa no devuelve ninguna palabra por cualquier motivo:**
 
 ```
 {
@@ -161,7 +169,7 @@ GET /api/v2/word?length=5&lang=it
 }
 ```
 
-**Pista:** Utiliza fetch o una librería similar para hacer la petición HTTP a la API externa y devuelve el resultado como proxy.
+**Pista:** Utiliza fetch (nativo de NodeJS) o una librería similar para hacer la petición HTTP a la API externa.
 
 Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v2/word?length=5&lang=it desde tu navegador o usando una herramienta como Thunderclient o curl.
 
