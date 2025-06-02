@@ -173,7 +173,7 @@ Implementa un endpoint /api/v1/words/all que permite obtener TODO el array de pa
 
 ### Bonus 3
 
-Implemena un endpoint /api/v1/words/:index que permite obtener la palabra que ocupa la posición _:indeX_ del array de palabras
+Implemena un endpoint /api/v1/words/:index que permite obtener la palabra que ocupa la posición _:indeX_ del array de palabras. Implementa todo control de errores y respuestas de error que creas necesario.
 
 ### Enlaces interesantes
 
