@@ -80,32 +80,9 @@ GET /api/v1/words?length=5
 
 **Pista:** Utiliza el método `filter` de los arrays para seleccionar solo las palabras que tengan la longitud indicada.
 
-## Iteración Intermaedia: Despliega tu API en render.com
-
-**Objetivo:** Subir y desplegar tu código en la nube usando render.com para que tu API sea accesible desde cualquier lugar.
-
-**Pasos sugeridos:**
-
-1. Sube tu proyecto a un repositorio en GitHub si no lo tienes ya(puedes crear uno nuevo y subir todos los archivos del proyecto).
-2. Accede a <a href="https://render.com/" target="_blank">render.com</a> y crea una cuenta si no tienes una.
-3. Crea un nuevo servicio de tipo "Web Service" y conecta tu cuenta de GitHub.
-4. Selecciona el repositorio de tu proyecto y sigue los pasos para desplegarlo:
-   - Elige Node.js como entorno.
-   - Asegúrate de que el comando de inicio sea `node index.js` o `npm start`.
-   - El puerto debe ser el que Render asigne automáticamente (usa `process.env.PORT`).
-5. Espera a que Render termine de construir y desplegar tu API.
-6. Prueba tu API accediendo a la URL pública que Render te proporciona, por ejemplo: `https://tu-api.onrender.com/api/v1/words`.
-
-**Consejo:** Puedes usar herramientas como Thunderclient, Postman o simplemente tu navegador para probar los endpoints en la URL pública.
-
-Cuando lo hayas conseguido, ¡comparte la URL con tus compañeros o profesor para que puedan probar tu API!
-
-
 ## Iteración 3: Endpoint v2 para devolver los idiomas disponibles
 
 **Objetivo:** Añadir un endpoint en la versión 2 de la API que devuelva un array con los idiomas soportados.
-
-Ahora queremos implementar la posibilidad de ofrecer el idioma de nuestra a
 
 - El endpoint debe estar en la ruta `/api/v2/languages` y responder a peticiones GET.
 - Debe devolver un array JSON con los idiomas disponibles, por ejemplo: `["zh", "pt-br", "es", "de", "it", "fr"]`.
@@ -134,19 +111,16 @@ Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podr
 
 **Objetivo:** Crear un endpoint que actúe como proxy y devuelva una palabra aleatoria obtenida desde una API externa, permitiendo especificar la longitud y el idioma.
 
-El cliente no sabe de donde obtenemos los datos o los servicios. Disponemos de una base de datos en data/word.json. Pero ahora nos gustaría implementar otra versión de la API, la cuál a su vez va a acceder a *otra API externa* para obtener palabras aleatorias y así enriquecer las funcionalidades de nuestro software. A este principio de la REST api se le llama [_layered system_]() Usa adecuadamente los endpoints de la API https://random-word-api.herokuapp.com para conseguir este propósito.
-
-
-- El endpoint debe estar en la ruta `/api/v2/word` y responder a peticiones GET.
+- El endpoint debe estar en la ruta `/api/v2/words` y responder a peticiones GET.
 - Debe aceptar los parámetros de consulta `length` (por ejemplo, 5) y `lang` (por ejemplo, es).
-- El endpoint debe hacer una petición a la API externa https://random-word-api.herokuapp.com usando los parámetros recibidos. *EXPLORA* los endpoints que ofrece esta REST API y cómo usarlos (no te va a funcionar si pones directamente `fetch("https://random-word-api.herokuapp.com")`)
+- El endpoint debe hacer una petición a la API externa https://random-word-api.herokuapp.com/word?length=5&lang=es usando los parámetros recibidos. *EXPLORA* los endpoints que ofrece esta REST API y cómo usarlos (no te va a funcionar si pones directamente `fetch("https://random-word-api.herokuapp.com")`)
 - Debe devolver la palabra obtenida en el formato `{ "word": "palabra" }`.
 - Si ocurre un error o no se encuentra palabra, debe devolver un error adecuado.
 
 **Ejemplo de petición:**
 
 ```
-GET /api/v2/word?length=5&lang=it
+GET /api/v2/words?length=5&lang=it
 ```
 
 **Ejemplo de respuesta esperada:**
@@ -159,11 +133,11 @@ GET /api/v2/word?length=5&lang=it
 
 **Si el cliente proporciona un idioma inválido**
 
+```
 {
   "error": "Idioma no soportado. Consulta los idiomas válidos en /api/v2/languages"
 }
-
-
+```
 
 **Si la API externa no devuelve ninguna palabra por cualquier motivo:**
 
@@ -175,7 +149,7 @@ GET /api/v2/word?length=5&lang=it
 
 **Pista:** Utiliza fetch (nativo de NodeJS) o una librería similar para hacer la petición HTTP a la API externa.
 
-Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v2/word?length=5&lang=it desde tu navegador o usando una herramienta como Thunderclient o curl.
+Implementa el endpoint en el lugar indicado en `index.js`. Cuando termines, podrás probarlo accediendo a http://localhost:3000/api/v2/words?length=5&lang=it desde tu navegador o usando una herramienta como Thunderclient o curl.
 
 ### Bonus 
 

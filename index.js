@@ -46,13 +46,13 @@ app.get("/api/v2/languages", (req, res) => {
 });
 
 // Endpoint para obtener una palabra aleatoria desde la API externa, permitiendo idioma y longitud
-app.get("/api/v2/word", async (req, res) => {
+app.get("/api/v2/words", async (req, res) => {
   const { length, lang } = req.query;
   const wordLength = Number(length) || 5;
   const language = lang || "es";
 
   if (!availableLanguages.includes(language)) {
-    return res.status(400).json({ error: "Idioma no soportado" });
+    return res.status(400).json({ error: "Idioma no soportado. Consulta los idiomas válidos en /api/v2/languages" });
   }
 
   try {
