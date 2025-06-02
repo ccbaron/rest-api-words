@@ -6,6 +6,10 @@ Vamos a desarrollar una nueva REST API con el objetivo de explicar algunos de lo
 
 Disponemos de una base de datos JSON con palabras de 3 a 13 letras.
 
+## Documentación de la API
+
+Informamos a los clientes de como usar nuestra API mediante el fichero **public/index.html** al cuál podemos acceder mediante http://localhost:3000/ una vez leventemos el servidor.
+
 ## Principios generales de las REST API
 
 ### 1. Interfaz Uniforme
