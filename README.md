@@ -2,6 +2,14 @@
 
 Vamos a desarrollar una nueva REST API con el objetivo de explicar algunos de los principios a seguir cuando creamos una REST API
 
+## Setup
+
+Instala todas las dependencias ejecutando 
+
+`npm install`
+
+Luego explora el fichero `package.json` para averiguar como levantar el servidor.
+
 ## Las base de datos JSON
 
 Disponemos de una base de datos JSON con palabras de 3 a 13 letras.
